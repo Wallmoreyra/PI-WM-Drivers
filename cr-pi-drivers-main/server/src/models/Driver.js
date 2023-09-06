@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('Drivers', {
+  sequelize.define('drivers', {
     id:{
       type:DataTypes.UUID,
       primaryKey:true,
@@ -32,6 +32,10 @@ module.exports = (sequelize) => {
     birthdate:{
       type:DataTypes.DATEONLY,
       allowNull:false
+    },
+    created:{
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
     },
   },
     {timestamps: false}
